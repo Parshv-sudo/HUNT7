@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard's Puzzle Challenge - Clue 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Wizard's Puzzle Challenge</h1>
+
+    <div class="container">
+        <h2>🧪 Clue 4: The Three Potions</h2>
+        <p>A wizard offers you three potions:</p>
+        <ul>
+            <li>1️⃣ Potion of Invisibility (Glows silver, smells like mist)</li>
+            <li>2️⃣ Potion of Wisdom (Glows gold, smells like aged paper)</li>
+            <li>3️⃣ Potion of Eternal Youth (Glows purple, has no scent)</li>
+        </ul>
+        <img src="image.webp" alt="Potions" style="width: 300px; height: auto; display: block; margin: auto;">
+        <p>The wizard warns: One potion is surely safe. The other two potions are either the safe one or the poisonous one.</p>
+        <p>Which potion should you drink?</p>
+        <input type="text" id="clue4" placeholder="Your answer">
+        <button onclick="checkAnswer(4, 'potion of invisibility')">Submit</button>
+        <p id="result4"></p>
+    </div>
+
+    <script>
+        function checkAnswer(clueNumber, correctAnswer) {
+            let userAnswer = document.getElementById('clue' + clueNumber).value.trim().toLowerCase();
+            let resultElement = document.getElementById('result' + clueNumber);
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "✅ Correct!";
+                resultElement.style.color = "lightgreen";
+            } else {
+                resultElement.innerHTML = "❌ Try again!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+    <script src="disable-inspect.js"></script>
+
+</body>
+</html>
